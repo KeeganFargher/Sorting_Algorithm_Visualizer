@@ -3,7 +3,7 @@
 The aim of this project is to visualize a variety of sorting algorithms, 
 which sort based on the hue of each colour. While there are many programs that visualize sorting algorithms, adding colour makes it much easier to understand how the algorithm functions.
 
-![picture alt](https://i.imgur.com/d0v7Qqj.png "Picture of UI demonstrating the hue sorting")
+![](https://i.imgur.com/OitzWtZ.gif "Picture of UI demonstrating the hue sorting")
 
 ### Getting Started
 If you would like to add additional algorithms to the application, these are the steps you need to follow:
