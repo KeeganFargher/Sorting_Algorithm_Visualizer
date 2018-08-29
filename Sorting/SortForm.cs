@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SortingLibrary.Algorithms;
 
 namespace Sorting
 {
@@ -62,6 +63,7 @@ namespace Sorting
         private void ButtonStart_Click(object sender, EventArgs e)
         {
             buttonStart.Enabled = false;
+            labelStatus.Text = "In Progress...";
 
             Enum.TryParse(comboBoxSortMethod.SelectedValue.ToString(), out SortEnums sort);
             switch (sort)
@@ -94,7 +96,9 @@ namespace Sorting
             test.ReportProgress += SortHandler;
             Task.Run(() => test.Sort(ref _color))
                 .ContinueWith(t => buttonStart
-                    .Invoke(new Action(() => buttonStart.Enabled = true)));
+                    .Invoke(new Action(() => buttonStart.Enabled = true)))
+                .ContinueWith(t => labelStatus
+                    .Invoke(new Action(() => labelStatus.Text = "Done!")));
         }
     }
 }

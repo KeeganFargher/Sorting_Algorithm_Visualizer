@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace SortingLibrary
+namespace SortingLibrary.Algorithms
 {
     public delegate void EventDelegate();
 

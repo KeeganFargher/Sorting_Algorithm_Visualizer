@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
-namespace SortingLibrary
+namespace SortingLibrary.Algorithms
 {
-    public class QuickSort :ISorting
+    public class QuickSort : ISorting
     {
         public event EventDelegate ReportProgress;
 
@@ -55,7 +52,10 @@ namespace SortingLibrary
                 {
                     right--;
                 }
-                    
+
+                ReportProgress();
+                Thread.Sleep(2);
+
                 if (left < right)
                 {
                     Swap(color, left, right);
@@ -64,9 +64,6 @@ namespace SortingLibrary
                     {
                         left++;
                     }
-
-                    ReportProgress();
-                    Thread.Sleep(2);
                 }
                 else
                 {

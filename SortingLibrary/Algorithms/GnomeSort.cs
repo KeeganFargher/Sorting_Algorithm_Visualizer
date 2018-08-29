@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Threading;
 
-namespace SortingLibrary
+namespace SortingLibrary.Algorithms
 {
     public class GnomeSort : ISorting
     {
