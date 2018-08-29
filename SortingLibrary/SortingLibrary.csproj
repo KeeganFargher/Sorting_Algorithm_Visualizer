@@ -51,6 +51,7 @@
     <Compile Include="Algorithms\CocktailSort.cs" />
     <Compile Include="Algorithms\CombSort.cs" />
     <Compile Include="Algorithms\GnomeSort.cs" />
+    <Compile Include="Algorithms\HeapSort.cs" />
     <Compile Include="Algorithms\ISorting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Algorithms\QuickSort.cs" />

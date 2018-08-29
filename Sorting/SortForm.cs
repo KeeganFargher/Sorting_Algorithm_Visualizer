@@ -81,6 +81,9 @@ namespace Sorting
                 case SortEnums.CocktailSort:
                     StartSort(new CocktailSort());
                     break;
+                case SortEnums.HeapSort:
+                    StartSort(new HeapSort());
+                    break;
                 case SortEnums.GnomeSort:
                     StartSort(new GnomeSort());
                     break;
