@@ -165,7 +165,7 @@
             this.Name = "SortForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sort Visualizer";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SortForm_Paint);
             this.Resize += new System.EventHandler(this.SortForm_Resize);
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();

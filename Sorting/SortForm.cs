@@ -22,7 +22,7 @@ namespace Sorting
             comboBoxSortMethod.DataSource = Enum.GetValues(typeof(SortEnums));
         }
 
-        private void Form1_Paint(object sender, PaintEventArgs e)
+        private void SortForm_Paint(object sender, PaintEventArgs e)
         {
             if (_color == null) return;
 
@@ -42,6 +42,10 @@ namespace Sorting
             }
         }
 
+        /// <summary>
+        /// Used to subscribe to the ReportProgress delegate, to update the
+        /// form on demand from different classes
+        /// </summary>
         private void SortHandler()
         {
             Invalidate();
