@@ -6,6 +6,7 @@ which sort based on the hue of each colour.
 * Bubble Sort
 * Cocktail Shaker Sort
 * Gnome Sort
+* Heap Sort
 * Selection Sort
 * Quick Sort
 * Comb Sort
