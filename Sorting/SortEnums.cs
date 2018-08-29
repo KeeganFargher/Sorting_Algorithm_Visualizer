@@ -8,6 +8,6 @@ namespace Sorting
 {
     public enum SortEnums
     {
-        BubbleSort, CocktailSort, GnomeSort, SelectionSort
+        BubbleSort, CocktailSort, CombSort, GnomeSort, SelectionSort, QuickSort
     }
 }
