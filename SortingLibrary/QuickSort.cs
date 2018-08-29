@@ -58,13 +58,13 @@ namespace SortingLibrary
                     
                 if (left < right)
                 {
-                    //if (color[left].GetHue() - color[right].GetHue() < double.Epsilon)
+                    Swap(color, left, right);
+
                     if (Math.Abs(color[left].GetHue() - color[right].GetHue()) < 0.00001)
                     {
-                        return right;
+                        left++;
                     }
 
-                    Swap(color, left, right);
                     ReportProgress();
                     Thread.Sleep(2);
                 }

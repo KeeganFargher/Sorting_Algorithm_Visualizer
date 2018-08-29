@@ -78,9 +78,9 @@ namespace Sorting
                 case SortEnums.GnomeSort:
                     StartSort(new GnomeSort());
                     break;
-                //case SortEnums.QuickSort:
-                //    StartSort(new QuickSort());
-                //    break;
+                case SortEnums.QuickSort:
+                    StartSort(new QuickSort());
+                    break;
                 case SortEnums.CombSort:
                     StartSort(new CombSort());
                     break;
