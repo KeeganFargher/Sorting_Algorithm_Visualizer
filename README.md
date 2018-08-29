@@ -7,3 +7,5 @@ which sort based on the hue of each colour.
 * Cocktail Shaker Sort
 * Gnome Sort
 * Selection Sort
+* Quick Sort
+* Comb Sort
