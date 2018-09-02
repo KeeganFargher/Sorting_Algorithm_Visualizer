@@ -9,9 +9,9 @@ namespace Sorting
 {
     public static class ArrayUtility
     {
-        public static void PopulateArray(ref Color[] color, int Width, int panelSidebarWidth)
+        public static void PopulateArray(ref Color[] color, int Width)
         {
-            color = new Color[Width - panelSidebarWidth];
+            color = new Color[Width];
 
             Random random = new Random();
             for (int j = 0; j < color.Length; j++)

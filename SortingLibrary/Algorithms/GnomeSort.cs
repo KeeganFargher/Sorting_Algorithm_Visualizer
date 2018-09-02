@@ -11,6 +11,8 @@ namespace SortingLibrary.Algorithms
         public void Sort(ref Color[] color)
         {
             int pos = 0;
+            int index = 0;
+
             while (pos < color.Length)
             {
                 if (pos == 0 || color[pos].GetHue() >= color[pos - 1].GetHue())
@@ -21,9 +23,10 @@ namespace SortingLibrary.Algorithms
                 {
                     Swap(color, pos, pos - 1);
                     pos--;
+                    if (index % 10 == 0) Thread.Sleep(1);
+                    index++;
                 }
                 ReportProgress();
-                Thread.Sleep(1);
             }
         }
 

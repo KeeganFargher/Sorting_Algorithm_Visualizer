@@ -1,9 +1,8 @@
-﻿using SortingLibrary;
+﻿using SortingLibrary.Algorithms;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SortingLibrary.Algorithms;
 
 namespace Sorting
 {
@@ -15,31 +14,11 @@ namespace Sorting
         {
             InitializeComponent();
 
-            ArrayUtility.PopulateArray(ref _color, Width, panelSidebar.Width);
+            ArrayUtility.PopulateArray(ref _color, panelMain.Width);
             labelArraySize.Text = _color.Length.ToString();
-            Invalidate();
+            panelMain.Invalidate();
 
             comboBoxSortMethod.DataSource = Enum.GetValues(typeof(SortEnums));
-        }
-
-        private void SortForm_Paint(object sender, PaintEventArgs e)
-        {
-            if (_color == null) return;
-
-            for (int j = 0; j < _color.Length; j++)
-            {
-                Brush brushColor = new SolidBrush(_color[j]);
-                Pen pen = new Pen(brushColor, 1);
-
-                //  Set the height of the line to the hue of the color
-                int colorHue = (int) Math.Round(_color[j].GetHue());
-
-                //  Visualizes the array using the hue as the height of each element
-                //  in the array
-                Point p1 = new Point(j, Height - 1);
-                Point p2 = new Point(j, colorHue);
-                e.Graphics.DrawLine(pen, p1, p2);
-            }
         }
 
         /// <summary>
@@ -48,20 +27,20 @@ namespace Sorting
         /// </summary>
         private void SortHandler()
         {
-            Invalidate();
+            panelMain.Invalidate();
         }
 
         private void SortForm_Resize(object sender, EventArgs e)
         {
-            ArrayUtility.PopulateArray(ref _color, Width, panelSidebar.Width);
+            ArrayUtility.PopulateArray(ref _color, panelMain.Width);
             labelArraySize.Text = _color.Length.ToString();
-            Invalidate();
+            panelMain.Invalidate();
         }
 
         private void ButtonRandomize_Click(object sender, EventArgs e)
         {
-            ArrayUtility.PopulateArray(ref _color, Width, panelSidebar.Width);
-            Invalidate();
+            ArrayUtility.PopulateArray(ref _color, panelMain.Width);
+            panelMain.Invalidate();
         }
 
         private void ButtonStart_Click(object sender, EventArgs e)
@@ -106,6 +85,26 @@ namespace Sorting
                     .Invoke(new Action(() => buttonStart.Enabled = true)))
                 .ContinueWith(t => labelStatus
                     .Invoke(new Action(() => labelStatus.Text = "Done!")));
+        }
+
+        private void PanelMain_Paint(object sender, PaintEventArgs e)
+        {
+            if (_color == null) return;
+
+            for (int j = 0; j < _color.Length; j++)
+            {
+                Brush brushColor = new SolidBrush(_color[j]);
+                Pen pen = new Pen(brushColor, 1);
+
+                //  Set the height of the line to the hue of the color
+                int colorHue = (int)Math.Round(_color[j].GetHue());
+
+                //  Visualizes the array using the hue as the height of each element
+                //  in the array
+                Point p1 = new Point(j, panelMain.Height);
+                Point p2 = new Point(j, colorHue);
+                e.Graphics.DrawLine(pen, p1, p2);
+            }
         }
     }
 }
