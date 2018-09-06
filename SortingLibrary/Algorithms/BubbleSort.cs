@@ -21,7 +21,8 @@ namespace SortingLibrary.Algorithms
                     {
                         Swap(color, j, j + 1);
                     }
-                    ReportProgress();
+
+                    ReportProgress?.Invoke();
                 }
                 Thread.Sleep((int) Utility.SleepTime);
             }

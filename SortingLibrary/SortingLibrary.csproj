@@ -53,6 +53,7 @@
     <Compile Include="Algorithms\GnomeSort.cs" />
     <Compile Include="Algorithms\HeapSort.cs" />
     <Compile Include="Algorithms\ISorting.cs" />
+    <Compile Include="ArrayUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Algorithms\QuickSort.cs" />
     <Compile Include="Algorithms\SelectionSort.cs" />
